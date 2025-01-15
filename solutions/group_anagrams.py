@@ -6,7 +6,6 @@ class Solution:
             sorted_string = "".join(sorted(string))
 
             strs_table.setdefault(sorted_string, [])
-
             strs_table[sorted_string].append(string)
 
         
