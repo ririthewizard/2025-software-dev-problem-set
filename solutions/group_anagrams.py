@@ -3,11 +3,13 @@ class Solution:
         result = []
 
         for word in range(0, len(strs) - 1):
-            tmp = sorted(word)
+            tmp = sorted(strs[word])
+            print(tmp)
 
             for j in range(word + 1, len(strs)):
-                if sorted(j) == tmp[0] and j not in tmp:
-                    tmp.append(j)
+                print(strs[j])
+                if sorted(strs[j]) == tmp[0] and strs[j] not in tmp:
+                    tmp.append(strs[j])
             result.append(tmp)
 
-            
+    print(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
