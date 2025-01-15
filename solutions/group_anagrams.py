@@ -1,15 +1,13 @@
 class Solution:
     def groupAnagrams(strs: list[str]) -> list[list[str]]:
-        result = []
+        strs_table = {}
 
-        for word in range(0, len(strs) - 1):
-            tmp = sorted(strs[word])
-            print(tmp)
+        for string in strs:
+            sorted_string = "".join(sorted(string))
 
-            for j in range(word + 1, len(strs)):
-                print(strs[j])
-                if sorted(strs[j]) == tmp[0] and strs[j] not in tmp:
-                    tmp.append(strs[j])
-            result.append(tmp)
+            strs_table.setdefault(sorted_string, [])
 
-    print(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
+            strs_table[sorted_string].append(string)
+
+        
+        return list(strs_table.values())
