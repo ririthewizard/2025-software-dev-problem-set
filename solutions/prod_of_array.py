@@ -14,8 +14,6 @@ class Solution:
             postfix *= nums[i]
 
         return result
-
-    print(productExceptSelf([1,2,3,4]))
     
 
 
