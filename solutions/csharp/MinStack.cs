@@ -9,22 +9,29 @@ public class MinStack
 
     public void Push()
     {
-
+        if (head == null)
+        {
+            head = new Node(val, val);
+        }
+        else
+        {
+            head = new Node(val, Math.Min(val, head.MinValue), head);
+        }
     }
 
     public void Pop()
     {
-
+        head = head.Next;
     }
 
     public int Top()
     {
-
+        return head.Value;
     }
 
     public int GetMin()
     {
-
+        return head.MinValue;
     }
 
     private class Node
