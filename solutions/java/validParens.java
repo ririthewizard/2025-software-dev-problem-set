@@ -16,7 +16,7 @@ class Solution {
 		}
 	}
 
-	public boolean generateParenthesis(String s) {
+	public List<String> generateParenthesis(int n) {
 		List<String> res = new ArrayList<>();
 		StringBuilder stack = new StringBuilder();
 		backtrack(n, 0, 0, res, stack);
