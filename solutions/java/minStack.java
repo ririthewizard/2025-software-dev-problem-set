@@ -1,6 +1,5 @@
 class MinStack {
-
-	private Node head;
+	Node head;
 
 	public MinStack() {
 		head = null;
@@ -8,10 +7,11 @@ class MinStack {
 
 	public void push(int val) {
 		if (head == null) {
-			head = new Node(val, val);
+			head = new Node(val, val, head);
 		} else {
-			head = new Node(val, Math.min(val, head.minValue), head);
+			head = new Node(val, Math.min(val, head.minVal), head);
 		}
+
 	}
 
 	public void pop() {
@@ -28,10 +28,10 @@ class MinStack {
 
 }
 
-public class Node {
-	int val;
-	int minVal;
-	Node next;
+class Node {
+	public int val;
+	public int minVal;
+	public Node next;
 
 	public Node(int val, int minVal, Node next) {
 		this.val = val;
