@@ -3,17 +3,13 @@ import java.util.*;
 
 class Solution {
     public boolean containsDuplicate(int[] nums) {
-	Hashtable<Integer, Integer> ht = new Hashtable();
-
-	for (int i = 0; i < nums.length; i++) {
-	    if (ht.containsKey(nums[i]) && ht.get(nums[i]) >= 1) {
+	Set<Integer> seen = new HashSet<>();
+	for (int num: nums) {
+	    if (seen.contains(num)) {
 		return true;
 	    }
-	    ht.put(nums[i], ht.getOrDefault(nums[i], 0) + 1);
+	    seen.add(num);
 	}
 	return false;
     }
-
-
-    System.out.println(containsDuplicate([1,2,3,1]))
 }
