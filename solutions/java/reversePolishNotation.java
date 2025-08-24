@@ -6,7 +6,7 @@ public int evalRPN(String[] tokens) {
 			int tokA = stack.pop();
 			int tokB = stack.pop();
 
-			stack.push(evaluate(tokB, tokA, token));
+			stack.push(evaluate(tokB, tokA, token)
 		} else {
 			stack.push(Integer.parseInt(token));
 		}
