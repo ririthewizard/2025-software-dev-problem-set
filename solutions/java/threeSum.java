@@ -1,5 +1,6 @@
 public List<List<Integer>> threeSum(int[] nums) {
-	Arrays.sort(nums);
+	Arrays.sort(num);
+
 	List<List<Integer>> result = new ArrayList<>();
 
 	for (int i = 0; i < nums.length; i++) {
