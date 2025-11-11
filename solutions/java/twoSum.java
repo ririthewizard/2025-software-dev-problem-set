@@ -6,10 +6,10 @@ class Solution {
 		int n = nums.length;
 
 		for (int i = 0; i < n; i++) {
-			int difference = target - nums[i];
+			int diff = target - nums[i];
 
-			if (numMap.containsKey(difference)) {
-				return new int[] { numMap.get(difference), i };
+			if (numMap.containsKey(diff)) {
+				return new int[] { numMap.get(diff), i };
 			}
 
 			numMap.put(nums[i], i);
